@@ -1,5 +1,7 @@
 #Importing of classes from other files
-from Product import Product,PhysicalProduct,DigitalProduct, Supplier
+from PhysicalProduct import PhysicalProduct
+from DigitalProduct import DigitalProduct
+from Supplier import Supplier
 from Inventory import Inventory
 
 #Menu Display and User Input    

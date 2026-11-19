@@ -1,5 +1,8 @@
 #Imports
-from Product import Product, PhysicalProduct,DigitalProduct, Supplier
+from Product import Product
+from PhysicalProduct import PhysicalProduct
+from DigitalProduct import DigitalProduct
+from Supplier import Supplier
 import json,os
 
 #Inventory Class
