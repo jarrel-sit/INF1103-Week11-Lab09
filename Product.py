@@ -1,12 +1,6 @@
 #Imports
-from abc import ABC, abstractmethod
 import math
 from Supplier import Supplier
-#CanBeShipped Interface
-class CanBeShipped(ABC):
-    @abstractmethod
-    def calculate_shipping_cost(self):
-        pass
 
 # #Creating Supplier(Blueprint)
 # class Supplier:

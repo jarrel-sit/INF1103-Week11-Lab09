@@ -1,4 +1,5 @@
-from Product import Product, CanBeShipped
+from Product import Product
+from Shipping import CanBeShipped
 from Supplier import Supplier
 
 #Physical Product Class

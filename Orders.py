@@ -1,4 +1,4 @@
-from Product import Product, PhysicalProduct, DigitalProduct, Supplier
+from Product import Product
 from OrderLine import OrderLine
 
 class Orders:
