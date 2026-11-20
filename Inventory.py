@@ -17,10 +17,10 @@ class Inventory:
 
     #Adds Product Object into existing inventory based on boolean value from exists method
     def add_product(self, product_to_add:Product):
-       if self._exists(product_to_add.itemid):
-           print ("Product already exists, not adding the product.")
-           return False
-       else:
+    #    if self._exists(product_to_add.itemid):
+    #        print ("Product already exists, not adding the product.")
+    #        return False
+    #    else:
            self.inventory.append(product_to_add)
            return True
 
