@@ -1,8 +1,8 @@
 #Importing of classes from other files
-from PhysicalProduct import PhysicalProduct
-from DigitalProduct import DigitalProduct
 from Supplier import Supplier
 from Inventory import Inventory
+from ProductFactory import ProductFactory
+from Validation import Validation
 
 #Menu Display and User Input    
 def menu():
@@ -23,21 +23,20 @@ def menu():
                     try:
                         itemid = input('ID: ')
                         name = input('Name of Product: ')
-                        price = float(input('Price: '))
+                        price = Validation.get_positive_float("Price of Product: ")
                         stock = int(input('Stock: '))
+                        if stock <= 0:
+                            raise ValueError("Stock must be greater than 0")
                         producttype = str(input("Physical or Digital? ")).lower()
                         if producttype == "physical":
-                            weight = float(input("Input the weight of this product: "))
-                            item = PhysicalProduct(name, itemid, price, stock, supplier1, weight, producttype)
-                            inventory.add_product(item)
-                            break
+                            extra = Validation.get_positive_float("Input Weight of Product: ")
                         elif producttype == "digital":
-                            download_size = float(input("Input the download size of this product (in MB): "))
-                            item = DigitalProduct(name, itemid, price, stock, supplier1, download_size, producttype)
-                            inventory.add_product(item)
-                            break
+                            extra = Validation.get_positive_float("Input Download Size of Product: ")
                         else:
-                            raise ValueError
+                            raise ValueError("Unknown product type")
+                        inventory.add_product(ProductFactory.create(producttype, itemid, name, price, stock, supplier1, extra))
+                        print('Product created')
+                        break
                     except ValueError:
                         print("Invalid format, please key in again")
 
@@ -73,13 +72,3 @@ if __name__ == "__main__":
     inventory = Inventory()
     inventory.load_inventory()
     menu()
-
-# #Test Substitutability
-# book = PhysicalProduct("Book", "P01", 50.0, 20, supplier1, 20.5, "physical")
-# ebook = DigitalProduct("E-Book", "P02", 15.0, 30, supplier1, 500.57, "digital")
-# #Test function for substitutability
-# def show_product_details(product:Product) -> None:
-#     product.display_information()
-#     print(product.get_fulfilment_info())
-
-# show_product_details(ebook)

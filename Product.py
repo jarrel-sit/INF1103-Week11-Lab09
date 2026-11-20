@@ -70,13 +70,3 @@ class Product:
 
     
 
-
-#Test Polymorphism (Has attributes of Parent class Product)
-#supplier1 = Supplier("S1", "Jarrel", "jarrel@gmail.com")
-#book = PhysicalProduct("Book", "P01", 50.0, 20, supplier1, 20.5, "physical")
-#ebook = DigitalProduct("E-Book", "P02", 15.0, 30, supplier1, 500.57, "digital")
-
-# #Test Association (Deleting supplier doesnt affect Product)
-# del supplier1
-# book.display_information()
-# ebook.display_information()

@@ -45,7 +45,7 @@ order1 = Orders("Order1", StudentDiscount("student",10))
 
 
 #Order 1
-order1.add_order_line(book, 5)
+order1.add_order_line(book, -5)
 print(order1.calculate_total())
 
 
