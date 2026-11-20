@@ -31,5 +31,16 @@
         "supplierid": "S1",
         "suppliername": "Jarrel",
         "contactinfo": "jarrel@gmail.com"
+    },
+    {
+        "id": "Mouse",
+        "name": "P02",
+        "price": 200.0,
+        "stock": 4,
+        "weight": 300.0,
+        "producttype": "physical",
+        "supplierid": "S1",
+        "suppliername": "Jarrel",
+        "contactinfo": "jarrel@gmail.com"
     }
 ]

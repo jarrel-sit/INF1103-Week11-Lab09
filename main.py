@@ -34,7 +34,7 @@ def menu():
                             extra = Validation.get_positive_float("Input Download Size of Product: ")
                         else:
                             raise ValueError("Unknown product type")
-                        inventory.add_product(ProductFactory.create(producttype, itemid, name, price, stock, supplier1, extra))
+                        inventory.add_product(ProductFactory._create(producttype, itemid, name, price, stock, supplier1, extra))
                         print('Product created')
                         break
                     except ValueError:
@@ -63,7 +63,7 @@ def menu():
                 break
             #Handles invalid inputs
             case _:
-                print('Invalid Response, please input a value 1-6.')
+                print('Invalid Response, please input a value 1-7.')
             
 
 #Loads inventory and menu if file is run

@@ -5,7 +5,7 @@ from Product import Product
 
 class ProductFactory:
  @staticmethod
- def create(product_type: str, product_id: str, name: str, price: float,
+ def _create(product_type: str, product_id: str, name: str, price: float,
     stock_quantity: int, supplier: Supplier, extra: float) -> Product:
     if product_type == "physical":
         
