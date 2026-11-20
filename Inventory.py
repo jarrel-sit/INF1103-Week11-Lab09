@@ -17,10 +17,10 @@ class Inventory:
 
     #Adds Product Object into existing inventory based on boolean value from exists method
     def add_product(self, product_to_add:Product):
-    #    if self._exists(product_to_add.itemid):
-    #        print ("Product already exists, not adding the product.")
-    #        return False
-    #    else:
+       if self._exists(product_to_add.itemid):
+           print ("Product already exists, not adding the product.")
+           return False
+       else:
            self.inventory.append(product_to_add)
            return True
 
@@ -100,21 +100,3 @@ class Inventory:
         except json.JSONDecodeError:
             print("However, inventory.json is empty, starting with an empty inventory...")
 
-         
-#Testing Aggregation
-# supplier1 = Supplier("S1", "Jarrel", "jarrel@gmail.com")
-# book = PhysicalProduct("Book", "P01", 50.0, 20, supplier1, 20.5, "physical")
-# ebook = DigitalProduct("E-Book", "P02", 15.0, 30, supplier1, 500.57, "digital")
-# inventorya = Inventory()
-# inventorya.add_product(book)
-# inventorya.add_product(ebook)
-# print("Before:")
-# for i in inventorya.inventory:
-#     i.display_information()
-#     i.get_fulfilment_info()
-
-# print("After:")
-# inventorya.remove_product(book.itemid)
-# for i in inventorya.inventory:
-#     i.display_information()
-#     i.get_fulfilment_info()
