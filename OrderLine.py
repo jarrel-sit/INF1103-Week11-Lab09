@@ -7,7 +7,7 @@ class OrderLine:
         self._productname:str = product.name
         pass
 
-    def line_total(self) -> float:
+    def calculate_subtotal(self) -> float:
         return self._quantity * self.product._price
 
     def __str__(self):
